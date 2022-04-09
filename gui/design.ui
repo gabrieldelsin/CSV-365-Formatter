@@ -70,7 +70,10 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgba(255, 0, 0, 241);</string>
+     <string notr="true">QFrame {
+	background-color: rgb(85, 170, 255);
+
+}</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -81,10 +84,10 @@
     <widget class="QGroupBox" name="groupBox_2">
      <property name="geometry">
       <rect>
-       <x>9</x>
-       <y>60</y>
+       <x>10</x>
+       <y>70</y>
        <width>991</width>
-       <height>551</height>
+       <height>541</height>
       </rect>
      </property>
      <property name="font">
@@ -93,8 +96,10 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(244, 244, 244);
-border-radius: 5px;</string>
+      <string notr="true">QGroupBox{
+	background-color: rgb(249, 249, 249);
+	border-radius: 3px;
+}</string>
      </property>
      <property name="title">
       <string/>
@@ -108,12 +113,13 @@ border-radius: 5px;</string>
         <x>10</x>
         <y>10</y>
         <width>971</width>
-        <height>471</height>
+        <height>461</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Arial</family>
+        <family>Yu Gothic UI</family>
+        <pointsize>10</pointsize>
        </font>
       </property>
       <property name="cursor" stdset="0">
@@ -122,11 +128,14 @@ border-radius: 5px;</string>
       <property name="focusPolicy">
        <enum>Qt::StrongFocus</enum>
       </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::CustomContextMenu</enum>
+      </property>
       <property name="styleSheet">
-       <string notr="true">QAbstractScrollArea {
-	border: 1px solid;
-	
-}</string>
+       <string notr="true">QListWidget {
+	background-color: rgb(255, 255, 255);
+}
+</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -199,12 +208,19 @@ border-radius: 5px;</string>
        <x>10</x>
        <y>10</y>
        <width>991</width>
-       <height>41</height>
+       <height>51</height>
       </rect>
      </property>
+     <property name="toolTipDuration">
+      <number>0</number>
+     </property>
      <property name="styleSheet">
-      <string notr="true">border-radius: 5px;
-background-color: rgb(244, 244, 244);</string>
+      <string notr="true">QGroupBox {
+	
+	background-color: rgb(255, 255, 255);
+	border-radius: 5px;
+	border: 1px solid;
+}</string>
      </property>
      <property name="title">
       <string/>
@@ -215,8 +231,8 @@ background-color: rgb(244, 244, 244);</string>
       </property>
       <property name="geometry">
        <rect>
-        <x>90</x>
-        <y>10</y>
+        <x>14</x>
+        <y>15</y>
         <width>51</width>
         <height>21</height>
        </rect>
@@ -226,6 +242,10 @@ background-color: rgb(244, 244, 244);</string>
         <family>Arial</family>
         <pointsize>9</pointsize>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string>Domain.:</string>
@@ -237,9 +257,9 @@ background-color: rgb(244, 244, 244);</string>
       </property>
       <property name="geometry">
        <rect>
-        <x>145</x>
-        <y>11</y>
-        <width>231</width>
+        <x>70</x>
+        <y>16</y>
+        <width>271</width>
         <height>19</height>
        </rect>
       </property>
@@ -257,15 +277,14 @@ background-color: rgb(244, 244, 244);</string>
        <bool>false</bool>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-style: solid;
-border-width: 1px;</string>
+       <string notr="true"/>
       </property>
       <property name="minimumContentsLength">
        <number>0</number>
       </property>
       <property name="iconSize">
        <size>
-        <width>0</width>
+        <width>16</width>
         <height>16</height>
        </size>
       </property>
@@ -285,10 +304,10 @@ border-width: 1px;</string>
       </property>
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>840</x>
         <y>10</y>
-        <width>51</width>
-        <height>21</height>
+        <width>71</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
@@ -300,8 +319,44 @@ border-width: 1px;</string>
       <property name="cursor">
        <cursorShape>PointingHandCursor</cursorShape>
       </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QCheckBox::hover {
+	
+	border-right: 100px;
+	background-color: rgb(212, 212, 212);
+	
+}
+
+QCheckBox{
+	padding-left: 15px;
+	background-color: rgb(244, 244, 244);
+	border-radius: 5px;
+}</string>
+      </property>
       <property name="text">
-       <string>Filter</string>
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../../Downloads/filter (1).png</normaloff>../../../../Downloads/filter (1).png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>16</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <property name="autoRepeat">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QLabel" name="license_label">
@@ -310,8 +365,8 @@ border-width: 1px;</string>
       </property>
       <property name="geometry">
        <rect>
-        <x>394</x>
-        <y>9</y>
+        <x>370</x>
+        <y>14</y>
         <width>51</width>
         <height>21</height>
        </rect>
@@ -321,6 +376,10 @@ border-width: 1px;</string>
         <family>Arial</family>
         <pointsize>9</pointsize>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string>License.:</string>
@@ -332,46 +391,9 @@ border-width: 1px;</string>
       </property>
       <property name="geometry">
        <rect>
-        <x>450</x>
-        <y>10</y>
-        <width>251</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Arial</family>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border-style: solid;
-border-width: 1px;</string>
-      </property>
-      <property name="maxVisibleItems">
-       <number>25</number>
-      </property>
-      <property name="sizeAdjustPolicy">
-       <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
-      </property>
-      <property name="duplicatesEnabled">
-       <bool>false</bool>
-      </property>
-      <property name="frame">
-       <bool>false</bool>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="block_radioButton">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>770</x>
-        <y>9</y>
-        <width>71</width>
+        <x>426</x>
+        <y>15</y>
+        <width>281</width>
         <height>21</height>
        </rect>
       </property>
@@ -384,15 +406,70 @@ border-width: 1px;</string>
       <property name="cursor">
        <cursorShape>PointingHandCursor</cursorShape>
       </property>
+      <property name="toolTip">
+       <string notr="true"/>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="currentIndex">
+       <number>-1</number>
+      </property>
+      <property name="maxVisibleItems">
+       <number>25</number>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>16</height>
+       </size>
+      </property>
+      <property name="duplicatesEnabled">
+       <bool>false</bool>
+      </property>
+      <property name="frame">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="block_radioButton">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>760</x>
+        <y>15</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
       <property name="text">
-       <string>Blocked</string>
+       <string>Deny</string>
       </property>
      </widget>
      <widget class="QLabel" name="login_label">
       <property name="geometry">
        <rect>
-        <x>720</x>
-        <y>10</y>
+        <x>719</x>
+        <y>15</y>
         <width>41</width>
         <height>21</height>
        </rect>
@@ -403,6 +480,9 @@ border-width: 1px;</string>
         <pointsize>9</pointsize>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
       <property name="text">
        <string>Login.:</string>
       </property>
@@ -410,42 +490,72 @@ border-width: 1px;</string>
      <widget class="QPushButton" name="update_btn">
       <property name="geometry">
        <rect>
-        <x>880</x>
-        <y>10</y>
-        <width>101</width>
-        <height>21</height>
+        <x>910</x>
+        <y>9</y>
+        <width>71</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Arial</family>
         <pointsize>9</pointsize>
-        <kerning>true</kerning>
+        <strikeout>false</strikeout>
+        <stylestrategy>PreferDefault</stylestrategy>
+        <kerning>false</kerning>
        </font>
       </property>
       <property name="cursor">
        <cursorShape>PointingHandCursor</cursorShape>
       </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="tabletTracking">
+       <bool>false</bool>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::ClickFocus</enum>
+      </property>
+      <property name="toolTipDuration">
+       <number>2</number>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton{
-	border: 1px solid;
+       <string notr="true">QPushButton::hover {
+	
+	background-color: rgb(212, 212, 212);
+	color: white;
+}
+
+QPushButton{
+	background-color: rgb(244, 244, 244);
 	border-radius: 5px;
 }</string>
       </property>
       <property name="text">
-       <string>Update</string>
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../../Downloads/search.png</normaloff>../../../../Downloads/search.png</iconset>
       </property>
       <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="autoExclusive">
        <bool>false</bool>
       </property>
       <property name="autoDefault">
        <bool>false</bool>
       </property>
       <property name="default">
-       <bool>false</bool>
+       <bool>true</bool>
       </property>
       <property name="flat">
-       <bool>true</bool>
+       <bool>false</bool>
       </property>
      </widget>
     </widget>
@@ -460,7 +570,8 @@ border-width: 1px;</string>
      </property>
      <property name="styleSheet">
       <string notr="true">QGroupBox {
-	background-color: rgb(244, 244, 244);
+	
+	background-color: rgb(255, 255, 255);
 	border-radius: 5px;
 	border: 1px solid;
 }</string>
@@ -477,7 +588,7 @@ border-width: 1px;</string>
       </property>
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>20</x>
         <y>10</y>
         <width>91</width>
         <height>31</height>
@@ -490,7 +601,7 @@ border-width: 1px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(244, 244, 244);</string>
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
        <string>Total accounts.:</string>
@@ -502,7 +613,7 @@ border-width: 1px;</string>
       </property>
       <property name="geometry">
        <rect>
-        <x>100</x>
+        <x>110</x>
         <y>10</y>
         <width>161</width>
         <height>31</height>
@@ -511,11 +622,11 @@ border-width: 1px;</string>
       <property name="font">
        <font>
         <family>Arial</family>
-        <pointsize>10</pointsize>
+        <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(244, 244, 244);</string>
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
        <string/>
@@ -527,8 +638,8 @@ border-width: 1px;</string>
       </property>
       <property name="geometry">
        <rect>
-        <x>711</x>
-        <y>10</y>
+        <x>700</x>
+        <y>13</y>
         <width>71</width>
         <height>21</height>
        </rect>
@@ -540,7 +651,7 @@ border-width: 1px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(244, 244, 244);</string>
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
        <string>Total cost.: </string>
@@ -552,8 +663,8 @@ border-width: 1px;</string>
       </property>
       <property name="geometry">
        <rect>
-        <x>781</x>
-        <y>12</y>
+        <x>770</x>
+        <y>15</y>
         <width>181</width>
         <height>16</height>
        </rect>
@@ -561,11 +672,11 @@ border-width: 1px;</string>
       <property name="font">
        <font>
         <family>Arial</family>
-        <pointsize>10</pointsize>
+        <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(244, 244, 244);</string>
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
        <string/>
@@ -574,9 +685,9 @@ border-width: 1px;</string>
      <widget class="QProgressBar" name="progressBar">
       <property name="geometry">
        <rect>
-        <x>710</x>
+        <x>640</x>
         <y>14</y>
-        <width>251</width>
+        <width>311</width>
         <height>21</height>
        </rect>
       </property>
@@ -588,6 +699,9 @@ border-width: 1px;</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+      <property name="invertedAppearance">
+       <bool>false</bool>
       </property>
      </widget>
     </widget>
