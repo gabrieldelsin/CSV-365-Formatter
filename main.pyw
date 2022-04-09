@@ -1,9 +1,11 @@
-from PyQt5.QtWidgets import QMainWindow, QApplication
-from FormatadorCSV import *
+import sys
 
+from PyQt5.QtWidgets import QApplication, QMainWindow
+
+from FormatCSV import FormatCSV
 
 if __name__ == '__main__':
     qt = QApplication(sys.argv)
-    novo = FormatadorCSV()
+    novo = FormatCSV()
     novo.show()
     qt.exec_()

@@ -7,7 +7,7 @@ from PyQt5.QtWidgets import QApplication, QFileDialog, QMainWindow, QMessageBox
 from gui.design import Ui_MainWindow
 
 
-class FormatadorCSV(QMainWindow, Ui_MainWindow):
+class FormatCSV(QMainWindow, Ui_MainWindow):
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -17,9 +17,18 @@ class FormatadorCSV(QMainWindow, Ui_MainWindow):
         self.file_path = None
         self.list = None
         self.save_list = []
+        self.progressBar.hide()
+        self.price = 4.70
 
-        # setting  the fixed size of window
-        self.setFixedSize(950, 670)
+        self.office_365_e3 = 23.00
+        self.office_365_e1 = 10.00
+        self.microsoft_365_business_standard = 12.50
+        self.microsoft_365_business_premium = 22.00
+        self.exchange_online_plan1 = 8.0
+        self.power_bi_pro = 9.99
+
+        self.setFixedSize(1011, 642)
+
         self.filter_checkBox.clicked.connect(
             lambda: self.enable_filter_fields())
         self.update_btn.clicked.connect(
@@ -27,9 +36,6 @@ class FormatadorCSV(QMainWindow, Ui_MainWindow):
         self.import_file_action.triggered.connect(
             lambda: self.import_file())
         self.save_action.triggered.connect(lambda: self.save_file())
-
-        self.progressBar.hide()
-        self.dollar_price = 5
 
         # Combo Box - Licenças
         self.license_combobox.addItem('Office 365 E1')
@@ -84,7 +90,7 @@ class FormatadorCSV(QMainWindow, Ui_MainWindow):
                             self.result_table.addItem(f'{line[0]}')
                             self.account_counter = self.account_counter + 1
                             self.save_list.append(line[0])
-                    self.dollar_price = 0
+                    self.price = 0
             elif license == 'Office 365 E3':
                 if domain in str(line[0]) and 'Office 365 E3' in str(line[1]):
                     if not entry_status:
@@ -97,7 +103,7 @@ class FormatadorCSV(QMainWindow, Ui_MainWindow):
                             self.result_table.addItem(f'{line[0]}')
                             self.account_counter = self.account_counter + 1
                             self.save_list.append(line[0])
-                    self.dollar_price = 147.20
+                    self.price = self.office_365_e3
 
             elif license == 'Office 365 E1':
                 if domain in str(line[0]) and 'Office 365 E1' in str(line[1]):
@@ -111,7 +117,7 @@ class FormatadorCSV(QMainWindow, Ui_MainWindow):
                             self.result_table.addItem(f'{line[0]}')
                             self.account_counter = self.account_counter + 1
                             self.save_list.append(line[0])
-                    self.dollar_price = 64
+                    self.price = self.office_365_e1
 
             elif license == 'Microsoft 365 Business Standard':
                 if domain in str(line[0]) and 'Microsoft 365 Business Standard' in str(line[1]):
@@ -125,7 +131,7 @@ class FormatadorCSV(QMainWindow, Ui_MainWindow):
                             self.result_table.addItem(f'{line[0]}')
                             self.account_counter = self.account_counter + 1
                             self.save_list.append(line[0])
-                    self.dollar_price = 80
+                    self.price = self.microsoft_365_business_standard
 
             elif license == 'Exchange Online (Plan 1)':
                 if domain in str(line[0]) and 'Exchange Online (Plan 1)' in str(line[1]):
@@ -139,7 +145,7 @@ class FormatadorCSV(QMainWindow, Ui_MainWindow):
                             self.result_table.addItem(f'{line[0]}')
                             self.account_counter = self.account_counter + 1
                             self.save_list.append(line[0])
-                    self.dollar_price = 25.60
+                    self.price = self.exchange_online_plan1
 
             elif license == 'Microsoft 365 Business Premium':
                 if domain in str(line[0]) and 'Microsoft 365 Business Premium' in str(line[1]):
@@ -153,7 +159,7 @@ class FormatadorCSV(QMainWindow, Ui_MainWindow):
                             self.result_table.addItem(f'{line[0]}')
                             self.account_counter = self.account_counter + 1
                             self.save_list.append(line[0])
-                    self.dollar_price = 140.80
+                    self.price = self.microsoft_365_business_premium
 
             elif license == 'Power BI Pro':
                 if domain in str(line[0]) and 'Power BI Pro' in str(line[1]):
@@ -167,7 +173,7 @@ class FormatadorCSV(QMainWindow, Ui_MainWindow):
                             self.result_table.addItem(f'{line[0]}')
                             self.account_counter = self.account_counter + 1
                             self.save_list.append(line[0])
-                    self.dollar_price = 140.80
+                    self.price = self.power_bi_pro
 
             elif license == 'Power BI (Free)':
                 if domain in str(line[0]) and 'Power BI (Free)' in str(line[1]):
@@ -181,7 +187,7 @@ class FormatadorCSV(QMainWindow, Ui_MainWindow):
                             self.result_table.addItem(f'{line[0]}')
                             self.account_counter = self.account_counter + 1
                             self.save_list.append(line[0])
-                    self.dollar_price = 140.80
+                    self.price = 0
 
             self.progressBar.setValue(self.progressBar.value() + 1)
 
@@ -223,7 +229,7 @@ class FormatadorCSV(QMainWindow, Ui_MainWindow):
                 self.filter_file(
                     domain_combobox, license_combobox, status_login)
                 self.qtde_accounts_label.setText(str(self.account_counter))
-                total_price = self.account_counter * self.dollar_price
+                total_price = self.account_counter * self.price
                 self.total_coast_label.setText(
                     '${:,.2f}'.format(total_price))
                 self.progressBar.setValue(self.progressBar.value() + 1)
@@ -243,7 +249,7 @@ class FormatadorCSV(QMainWindow, Ui_MainWindow):
                         self.save_list.append(line[0])
                     self.progressBar.setValue(self.progressBar.value() + 1)
                 self.qtde_accounts_label.setText(str(self.account_counter))
-                resultado_total = qtde_accounts * self.dollar_price
+                resultado_total = qtde_accounts * self.price
                 self.total_coast_label.setText(
                     '${:,.2f}'.format(resultado_total))
 
@@ -260,7 +266,6 @@ class FormatadorCSV(QMainWindow, Ui_MainWindow):
                 self.list_combobox.append(str(account_mail[1]))
 
     def save_file(self):
-        print(self.save_list)
         if self.list != None:
             try:
                 filename, _ = QFileDialog.getSaveFileName(
