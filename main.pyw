@@ -8,4 +8,4 @@ if __name__ == '__main__':
     qt = QApplication(sys.argv)
     novo = FormatCSV()
     novo.show()
-    qt.exec_()
+    sys.exit(qt.exec_())
