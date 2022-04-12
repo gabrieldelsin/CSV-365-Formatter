@@ -2,6 +2,8 @@ import sys
 import time
 
 import pandas as pd
+from PyQt5 import QtGui
+from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QFileDialog, QMainWindow, QMessageBox
 
 from gui.design import Ui_MainWindow
@@ -26,8 +28,6 @@ class FormatCSV(QMainWindow, Ui_MainWindow):
         self.microsoft_365_business_premium = 22.00
         self.exchange_online_plan1 = 8.0
         self.power_bi_pro = 9.99
-
-        self.setFixedSize(1011, 642)
 
         self.filter_checkBox.clicked.connect(
             lambda: self.enable_filter_fields())
